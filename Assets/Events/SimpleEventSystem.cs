@@ -16,7 +16,7 @@ namespace Events
                 Debug.LogError("the current scene has no defined SimpleEventSystem singleton");
                 return;
             }
-            if (_current._listeners.ContainsKey(e)) {
+            if (!_current._listeners.ContainsKey(e)) {
                 Debug.LogErrorFormat("attempted to add listener to undefined event \"{0}\"", e);
                 return;
             }
